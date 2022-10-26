@@ -1,0 +1,39 @@
+@import '../base';
+@import '../helpers';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    @include container;
+    @include margin-bottom(2);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav__list {
+    display: none;
+    // display: flex;
+    // align-items: center;
+}
+
+.nav__item:first-child {
+    margin-left: auto;
+}
+
+.nav__item:nth-child(3) {
+    margin-right: auto;
+}
+
+.mobile-nav {
+    &__btn {
+        display: block;
+        font-size: 1.3rem;
+        margin-left: auto;
+        cursor: pointer;
+    }
+}

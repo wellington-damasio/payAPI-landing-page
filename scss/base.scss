@@ -1,0 +1,108 @@
+// -------------------------------------------
+//                    Colors
+// -------------------------------------------
+$primary: #fbfcfe;
+$primary-accent: #ba4270;
+$primary-opaque: #c9c9c9;
+$secondary: #36536b;
+$secondary-opaque: #a4b1bd;
+$secondary-dark: #1b262f;
+$secondary-active: #da6b97;
+$secondary-gray: #6c8294;
+$background-color: #edf3f8;
+
+// -------------------------------------------
+//                  Typography
+// -------------------------------------------
+$ff-dm-serif: 'DM Serif Display', serif;
+$ff-public-sans: 'Public Sans', sans-serif;
+
+@mixin h1-big {
+    font-size: 4.5rem;
+    font-family: $ff-dm-serif;
+    line-height: 72px;
+}
+
+@mixin h1-small {
+    font-size: 3.5rem;
+    font-family: $ff-dm-serif;
+    line-height: 56px;
+}
+
+@mixin h2 {
+    font-size: 3rem;
+    line-height: 56px;
+    font-family: $ff-dm-serif;
+}
+
+@mixin h3-big {
+    font-size: 2rem;
+    line-height: 40px;
+    font-weight: 500;
+    font-family: $ff-dm-serif;
+}
+
+@mixin h3-small {
+    font-size: 1.125rem;
+    line-height: 25px;
+    font-family: $ff-dm-serif;
+}
+
+@mixin h4 {
+    font-size: 1.5rem;
+    line-height: 32px;
+    font-family: $ff-dm-serif;
+}
+
+@mixin body-text {
+    font-size: 0.9rem;
+    line-height: 28px;
+    font-family: $ff-public-sans;
+    font-weight: 400;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 4rem;
+    @include h3-big;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// -------------------------------------------
+//                    Resets
+// -------------------------------------------
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+body {
+    font-family: $ff-public-sans;
+    background-color: $background-color;
+    color: $secondary;
+}

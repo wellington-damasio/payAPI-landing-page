@@ -1,0 +1,55 @@
+@import '../base';
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.7rem;
+    min-width: 9rem;
+    border-radius: 3rem;
+    background-color: $primary-accent;
+    color: $primary;
+    font-weight: 700;
+    font-family: $ff-public-sans;
+    font-size: 0.85rem;
+    letter-spacing: -0.12px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $secondary-active;
+    }
+
+    &:disabled {
+        opacity: 0.7;
+    }
+
+    &--secondary {
+        background-color: transparent;
+        border: 1px solid $secondary;
+        color: $secondary;
+
+        &:hover {
+            background-color: $secondary;
+            color: $primary;
+        }
+
+        &:disabled {
+            opacity: 0.5;
+        }
+    }
+
+    &--secondary-dark {
+        min-width: 8.125rem;
+        background-color: $secondary-dark;
+        border: 1px solid $primary;
+
+        &:hover {
+            background-color: $primary;
+            color: $secondary-dark;
+        }
+
+        &:disabled {
+            opacity: 0.5;
+        }
+    }
+}

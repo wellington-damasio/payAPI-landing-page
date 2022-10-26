@@ -7,33 +7,190 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
 
     <title>Frontend Mentor | PayAPI Website Challenge</title>
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
 
   <body>
-    Pricing
-    About
-    Contact
-    Schedule a Demo
+    <header class="header">
+      <a href="index.html" class="logo__link">
+        <img src="assets/shared/desktop/logo.svg" alt="" class="logo">
+      </a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="pricing.html" class="nav__link">Pricing</a>
+          </li>
+          <li class="nav__item">
+            <a href="about.html" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="contact.html" class="nav__link">Contact</a>
+          </li>
+          <li class="nav__item">
+            <button class="btn">Schedule a Demo</button>
+          </li>
+        </ul>
 
-    Submit a help request and we’ll get in touch shortly.
-    
-    Name
-    Email Address
-    Company Name
-    Title
-    Message
-    Stay up-to-date with company announcements and updates to our API
-    Submit
+        <button class="mobile-nav__btn">
+          <i class="fa-sharp fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </header>
 
-    Join the thousands of innovators already building with us
+    <main>
+      <h3 class="title">
+        Submit a help request and we’ll get in touch shortly.
+      </h3>
 
-    Ready to start? 
-    Enter email address 
-    Schedule a Demo
+      <form class="form">
+        <input 
+          class="form__input"
+          type="text"  
+          placeholder="Name"
+        />
 
-    Pricing
-    About
-    Contact
+        <input 
+          class="form__input"
+          type="email"  
+          placeholder="Email Address"
+        />
+
+        <input 
+          class="form__input"
+          type="text"  
+          placeholder="Company Name"
+        />
+
+        <input 
+          class="form__input"
+          type="text"  
+          placeholder="Title"
+        />
+
+        <textarea class="form__textarea" placeholder="Message"></textarea>
+
+        <div class="announcements-check">
+          <label for="stay-up-to-date" class="checkbox__container">
+            <input class="checkbox" type="checkbox" id="stay-up-to-date">
+            <span class="checkbox__mark"></span>
+          </label>
+          <p>
+            Stay up-to-date with company announcements and updates to our API
+          </p>
+        </div>
+
+        <button class="btn btn--secondary">Submit</button>
+      </form>
+
+      <div class="innovators">
+        <p class="innovators__title">
+          Join the thousands of innovators already building with us
+        </p>
+
+        <div class="innovators__icons">
+          <img 
+            class="innovators__icon"
+            src="assets/shared/desktop/tesla.svg" 
+            alt=""
+          />
+
+          <img 
+            class="innovators__icon"
+            src="assets/shared/desktop/hewlett-packard.svg" 
+            alt=""
+          />
+
+          <img 
+            class="innovators__icon"
+            src="assets/shared/desktop/google.svg" 
+            alt=""
+          />
+
+          <img 
+            class="innovators__icon"
+            src="assets/shared/desktop/microsoft.svg" 
+            alt=""
+          />
+
+          <img 
+            class="innovators__icon"
+            src="assets/shared/desktop/oracle.svg" 
+            alt=""
+          />
+
+          <img 
+            class="innovators__icon"
+            src="assets/shared/desktop/nvidia.svg" 
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div class="call-to-action">
+        <p class="call-to-action__title">Ready to start?</p>
+        <form class="call-to-action__form">
+          <input type="text" class="call-to-action__input" 
+            placeholder="Enter email address"/>
+
+          <button class="btn">Schedule a Demo</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <img 
+        class="footer__logo"
+        src="assets/shared/desktop/logo-dark.svg" 
+        alt=""
+      />
+      <ul class="footer-nav">
+        <li class="footer-nav__item">
+          <a href="pricing.html" class="footer-nav__link">Pricing</a>
+        </li>
+        <li class="footer-nav__item">
+          <a href="about.html" class="footer-nav__link">About</a>
+        </li>
+        <li class="footer-nav__item">
+          <a href="contact.html" class="footer-nav__link">Contact</a>
+        </li>
+      </ul>
+
+      <div class="social-media__container">
+        <a href="#">
+          <img 
+            class="social-media__icon"
+            src="assets/shared/desktop/facebook.svg" 
+            alt=""
+          />
+        </a>
+
+        <a href="#">
+          <img 
+            class="social-media__icon"
+            src="assets/shared/desktop/twitter.svg" 
+            alt=""
+          />
+        </a>
+
+        <a href="#">
+          <img 
+            class="social-media__icon"
+            src="assets/shared/desktop/linkedin.svg" 
+            alt=""
+          />
+        </a>
+      </div>
+    </footer>
   </body>
 
 </html>

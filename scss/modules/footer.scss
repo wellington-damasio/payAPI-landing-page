@@ -1,0 +1,48 @@
+@import '../base';
+
+// ------------------------------------------------
+//                     Footer
+// ------------------------------------------------
+.footer {
+    position: relative;
+    overflow: hidden;
+    background-color: $secondary-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding-block: 2.5rem;
+
+    &-nav {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        z-index: 2;
+
+        &__link {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: $primary-opaque;
+        }
+    }
+
+    .social-media__container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        z-index: 2;
+    }
+
+    
+
+    &::after {
+        content: url('../../../assets/shared/desktop/bg-pattern-circle.svg');
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+    }
+}

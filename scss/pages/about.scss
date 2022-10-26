@@ -1,0 +1,94 @@
+@import '../base';
+@import '../helpers';
+
+// --------------------------------------------
+//                About Us Texts
+// --------------------------------------------
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    @include container;
+    @include margin-bottom(4.75);
+
+    .col-1,
+    .col-2 {
+        text-align: center;
+    }
+
+    .col-1 {
+        & > .title {
+            margin-bottom: 1rem;
+            @include h4;
+        }
+
+        & > .text {
+            color: $secondary-gray;
+        }
+    }
+
+    .col-2 {
+        & > .title {
+            margin-bottom: 1rem;
+            @include h4;
+        }
+
+        & > .text {
+            color: $secondary-gray;
+        }
+    }
+}
+
+// --------------------------------------------
+//                    Banner
+// --------------------------------------------
+.banner {
+    @include margin-bottom(3);
+}
+
+// --------------------------------------------
+//              Social Proof Section
+// --------------------------------------------
+.social-proof {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-block: 1.2rem;
+    @include margin-bottom(5);
+
+    & > .col {
+        text-align: center;
+    }
+
+    &__label {
+        color: $secondary;
+        font-size: 1.05rem;
+        margin-bottom: 1rem;
+    }
+
+    &__number {
+        @include h1-small;
+        color: $primary-accent;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 90%;
+        height: 1px;
+        left: 5%;
+        background-color: $secondary-opaque;
+    }
+
+    &::before {
+        top: 0;
+    }
+
+    &::after {
+        bottom: 0;
+    }
+}

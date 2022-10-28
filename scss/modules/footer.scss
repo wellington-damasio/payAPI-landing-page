@@ -1,4 +1,5 @@
 @import '../base';
+@import '../helpers';
 
 // ------------------------------------------------
 //                     Footer
@@ -7,11 +8,15 @@
     position: relative;
     overflow: hidden;
     background-color: $secondary-dark;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
     padding-block: 2.5rem;
+    margin-top: auto;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
 
     &-nav {
         position: relative;
@@ -24,25 +29,67 @@
         &__link {
             font-size: 0.9rem;
             font-weight: 700;
-            color: $primary-opaque;
+            color: $primary;
+            opacity: 0.7;
+
+            &:hover {
+                opacity: 1;
+            }
         }
     }
 
-    .social-media__container {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
-        z-index: 2;
-    }
+    .social-media {
 
-    
+        &__container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            z-index: 2;   
+        }
+
+        &__icon {
+            font-size: 1.6rem;
+            color: $primary;
+
+            &:hover {
+                color: $secondary-active;
+            }
+        }
+    }
 
     &::after {
         content: url('../../../assets/shared/desktop/bg-pattern-circle.svg');
         position: absolute;
         top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 1;
+    }
+
+    @include tablet-mq {
+
+        &__container {
+            @include container;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &-nav {
+            flex-direction: row;
+        }
+
+        &::after {
+            left: 95%;
+            top: -40%;
+        }
+    }
+
+    @media only screen and (min-width: 1950px) {
+        &::after {
+            left: 88%;
+            top: -150%;
+        }
     }
 }

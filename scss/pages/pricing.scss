@@ -9,10 +9,19 @@
     flex-direction: column;
     gap: 3.5rem;
     @include container;
+
+    @include tablet-mq {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    @media only screen and (min-width: 601px) and (max-width: 767px) {
+        gap: 0;   
+    }
 }
 
 .pricing-table {
-    @include margin-bottom(5);
+    margin-bottom: 5rem;
 
     &__title {
         color: $primary-accent;

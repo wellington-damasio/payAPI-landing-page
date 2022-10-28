@@ -10,7 +10,7 @@
     align-items: center;
     gap: 3rem;
     @include container;
-    @include margin-bottom(4.75);
+    margin-bottom: 4.75rem;
 
     .col-1,
     .col-2 {
@@ -38,13 +38,43 @@
             color: $secondary-gray;
         }
     }
+
+    @include tablet-mq {
+
+        .col-1,
+        .col-2 {
+            display: grid;
+            grid-template-columns: 15rem 1fr;
+            width: 100%;
+        }
+
+        .col-1 > .title,
+        .col-2 > .title {
+            @include h3-big;
+        }
+
+        .col-1 {
+            & > .title,
+            & > .text {
+                text-align: left;
+            }
+        }
+
+        .col-2 {
+            & > .title,
+            & > .text {
+                text-align: left;
+            }
+        }
+    }
 }
 
 // --------------------------------------------
 //                    Banner
 // --------------------------------------------
 .banner {
-    @include margin-bottom(3);
+    margin-bottom: 3rem;
+    width: 100%;
 }
 
 // --------------------------------------------
@@ -57,14 +87,14 @@
     align-items: center;
     gap: 2rem;
     padding-block: 1.2rem;
-    @include margin-bottom(5);
+    margin-bottom: 5rem;
 
     & > .col {
         text-align: center;
     }
 
     &__label {
-        color: $secondary;
+        color: $secondary-opaque;
         font-size: 1.05rem;
         margin-bottom: 1rem;
     }
@@ -90,5 +120,25 @@
 
     &::after {
         bottom: 0;
+    }
+
+    @include tablet-mq {
+        flex-direction: row;
+        gap: 1rem;
+        @include container;
+
+        & > .col {
+            width: 100%;
+            border-top: 1px solid $secondary-opaque;
+            border-bottom: 1px solid $secondary-opaque;
+            padding-top: 2.6rem;
+            padding-bottom: 1rem;
+            text-align: left;
+        }
+
+        &::after,
+        &::before {
+            display: none;
+        }
     }
 }

@@ -6,7 +6,8 @@
 // ---------------------------------------------
 .form {
     @include container;
-    @include margin-bottom(5);
+    max-width: 27.8rem;
+    margin-bottom: 5rem;
 
     &__input {
         display: block;
@@ -18,13 +19,21 @@
         border-bottom: 1px solid $secondary-opaque;
         color: $secondary;
         background-color: transparent;
-        margin-bottom: 1.5rem;
 
         &::placeholder {
             font-family: $ff-public-sans;
             color: $secondary-opaque;
             font-size: 0.9rem;
             letter-spacing: -0.12px;
+        }
+    }
+
+    & > small {
+        display: block;
+        margin-bottom: 1.5rem;
+
+        &.input-error {
+            margin-top: 0.5rem;
         }
     }
 
@@ -64,6 +73,10 @@
             color: $secondary;
             font-weight: 500;
         }
+    }
+
+    @include pc-mq {
+        max-width: 32rem;
     }
 }
 
@@ -132,7 +145,7 @@
 // ----------------------------------------------
 .innovators {
     @include container;
-    @include margin-bottom(5);
+    margin-bottom: 5rem;
 
     &__title {
         @include h4;
@@ -144,7 +157,68 @@
     &__icons {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
         align-items: center;
         gap: 2.5rem;
     }
+
+    @include tablet-mq {
+        &__title {
+            max-width: 27.8rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__icons {
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+        }
+    }
+
+    @include pc-mq {
+        align-self: center; // In relation to it's grid parent
+
+        &__title {
+            text-align: left;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        &__icons {
+            justify-items: start;
+        }
+    }
 }
+
+// ----------------------------------------------
+//            Container for PC Screens
+// ----------------------------------------------
+.contact-main {
+    @include pc-mq {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 
+        'title title'
+        'form innovators'
+        'cta cta';
+        @include container;
+
+        .title {
+            grid-area: title;
+        }
+
+        .form {
+            grid-area: form;
+        }
+
+        .innovators {
+            grid-area: innovators;
+        }
+
+        .call-to-action {
+            grid-area: cta;
+        }
+    }
+}
+

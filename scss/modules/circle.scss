@@ -1,0 +1,62 @@
+@import '../base';
+@import '../helpers';
+
+// ------------------------------------------------
+//                      Circle
+// ------------------------------------------------
+.circle-container {
+    position: absolute;
+    overflow: hidden;
+    width: 100vw;
+    height: 16rem;
+    user-select: none;
+    z-index: -1;
+
+    &::after {
+        content: url('../../assets/shared/desktop/bg-pattern-circle.svg');
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &--right::after {
+        bottom: 50%;
+        left: 120%;
+    }
+
+    @include tablet-mq {
+        &--right::after {
+            left: 110%;
+            bottom: 20%;
+        }
+    }
+
+    @include pc-mq {
+        height: 40rem;
+
+        // Otherwise it will overflow because of the height (below)
+        max-width: 100vw;
+        &::after {
+            left: 90%;
+        }
+
+        &--right {
+            height: 20rem;
+        }
+    }
+
+    @media screen and (min-width: 750px) {
+        &::after {
+            left: 88%;
+        }
+    }
+
+    @media screen and (min-width: 143.75em) {
+        height: 24rem;
+
+        &::after {
+            left: 85%;
+        }
+    }
+}

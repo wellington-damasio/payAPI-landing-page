@@ -7,8 +7,9 @@
 .call-to-action {
     display: flex;
     flex-direction: column;
+    align-items: center;
     @include container;
-    @include margin-bottom(5);
+    margin-bottom: 5rem;
 
     &__title {
         @include h3-big;
@@ -19,11 +20,15 @@
     &__form {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     &__input {
+        font-size: 1rem;
+        font-family: $ff-public-sans;
         border: none;  
         height: 3rem;
+        width: 100%;
         border-radius: 3rem;
         padding: 0 1rem;
         margin-bottom: 1rem;
@@ -36,6 +41,34 @@
             color: $secondary-opaque;
             background-color: $primary;
           }
+    }
+
+    @include tablet-mq {
+        &__title {
+            @include h2;
+        }
+
+        &__form {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            width: 35rem;
+        }
+
+        &__input {
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+        }
+
+        & .btn {
+            height: 3rem;
+            grid-column: 4 / -1;
+            grid-row: 1 / 2;
+        }
+    }
+
+    @include pc-mq {
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 

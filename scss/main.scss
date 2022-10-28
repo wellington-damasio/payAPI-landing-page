@@ -7,10 +7,12 @@
 @use '../scss/pages/contact';
 
 // Modules / Components
+@use './modules/circle';
 @use './modules/navbar';
 @use './modules/call-to-action';
 @use './modules/buttons';
 @use './modules/footer';
+@use './modules/mobile-nav';
 
 // Helpers
 @use 'helpers';

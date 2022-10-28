@@ -1,36 +1,14 @@
 @import '../base';
 @import '../helpers';
-
-// ------------------------------------------------
-//                      Circle
-// ------------------------------------------------
-.circle-container {
-    position: absolute;
-    overflow: hidden;
-    width: 100vw;
-    height: 16rem;
-    user-select: none;
-    z-index: -1;
-
-    &::after {
-        content: url('../../assets/shared/desktop/bg-pattern-circle.svg');
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
 // ------------------------------------------------
 //                      Hero
 // ------------------------------------------------
-
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     @include container;
-    @include margin-bottom(5);
+    margin-bottom: 5rem;
 
     &__img {
         max-width: 16rem;
@@ -74,20 +52,74 @@
             @include body-text;
         }
     }
+
+    @include tablet-mq {
+        &__form {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: auto 3rem auto;
+            gap: 1.5rem;
+            max-width: 37rem;
+
+            & > h1 {
+                @include h2;
+                grid-column: 1 / -1;
+                grid-row: 1 / 2;
+            }
+
+            &__input {
+                grid-column: 1 / -1;
+                grid-row: 2 / 3;
+            }
+
+            & .btn {
+                height:  3rem;
+
+                grid-column:  4 / -1;
+                grid-row: 2 / 3;
+            }
+
+            &__message {
+                grid-column: 1 / -1;
+                grid-row: 3 / 4;
+            }
+        }
+    }
+
+    @include pc-mq {
+        flex-direction: row;
+        justify-content: space-around;
+
+        &__img {
+            order: 2;
+            max-width: 100%;
+        }
+
+        &__form {
+            max-width: 35rem;
+            & > h1 {
+                @include h1-big;
+                margin-bottom: 2rem;
+            }
+        }
+    }
 }
 
 // ------------------------------------------------
 //                     Partners
 // ------------------------------------------------
 .partners {
+    position: relative;
     background-color: $secondary-dark;
     color: $primary;
     padding: 5rem 1.5rem;
-    @include margin-bottom(5);
+    margin-bottom: 5rem;
+    overflow: hidden;
 
     &-logo__container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
         align-items: center;
         gap: 2.5rem;
         @include container;
@@ -113,6 +145,53 @@
             margin-right: auto;
         }
     }
+
+    &::after {
+        content: url('../../assets/shared/desktop/bg-pattern-circle.svg');
+        position: absolute;
+        bottom: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @include tablet-mq {
+        &-logo__container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        &__content {
+            @include container;
+
+            &__title {
+                @include h2;
+            }
+        }
+    }
+
+    @include pc-mq {
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+        padding-inline: 10rem;
+
+        &__content {
+            text-align: left;
+
+            & > .btn {
+                margin-left: 0;
+            }
+        }
+
+        &-logo__container {
+            order: 2;
+            align-content: center;
+            margin-bottom: 0;
+        }
+
+        &::after {
+            bottom: 10%;
+            left: 10%;
+        }
+    }
 }
 
 // ------------------------------------------------
@@ -124,7 +203,7 @@
     align-items: center;
     text-align: center;
     @include container;
-    @include margin-bottom(5);
+    margin-bottom: 5rem;
 
     &__title {
         @include h3-big;
@@ -139,6 +218,45 @@
         @include body-text;
         color: $secondary-gray;
     }
+
+    @include tablet-mq {
+        margin-bottom: 7rem;
+
+        &__title {
+            @include h2;
+        }
+
+        &__text {
+            max-width: 35rem;
+        }
+
+        &__img {
+            margin-left: 3rem;
+        }
+    }
+
+    @include pc-mq {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        &__content {
+            text-align: left;
+            min-width: 27rem;
+        }
+
+        &.first {
+            margin-bottom: 2rem;
+        }
+
+        &.second &__img{
+            order: 2;
+        }
+
+        &.second {
+            margin-top: 5rem;
+        }
+    }
 }
 
 // ------------------------------------------------
@@ -149,7 +267,7 @@
     flex-direction: column;
     gap: 3rem;
     @include container;
-    @include margin-bottom(5);
+    margin-bottom: 5rem;
 
     & > .col-1,
     & > .col-2,
@@ -175,4 +293,36 @@
             color: $secondary-gray;
         }
     }
+
+    @include tablet-mq {
+        flex-direction: row;
+        align-items: flex-start;
+    }
 }
+
+// ------------------------------------------------
+//       Circle in the Second 2-Column Layout
+// ------------------------------------------------
+.circle-wrapper {
+    @include pc-mq {
+        overflow-x: hidden;
+        position: relative;
+
+        &::after {
+            content: url('../../assets/shared/desktop/bg-pattern-circle.svg');
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            bottom: 0;
+            left: 75%;
+        }
+    }
+
+    @media only screen and (min-width: 1850px) {
+        &::after {
+            left: 60%;
+        }
+    }
+}
+
